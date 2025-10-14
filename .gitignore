@@ -1,0 +1,10 @@
+﻿node_modules
+.next
+.env*
+.vscode
+.DS_Store
+dist
+coverage
+contract/target
+*.wasm
+*.log
