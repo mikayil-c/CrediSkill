@@ -1,22 +1,5 @@
 # CrediSkill — Minimal Skill-Exchange dApp
 
-This workspace contains a minimal Next.js (TypeScript) + Tailwind frontend and a simple Soroban (Rust) contract for a skill-exchange demo.
-
-What I added:
-- Next.js scaffold (pages/index.tsx, pages/main.tsx)
-- Freighter connect flow (uses `window.freighterApi.requestAccess()`)
-- `lib/stellar.ts` helper (skeleton for soroban-client calls)
-- A minimal Soroban contract under `contract/` implementing `exchange_skill`, `get_total_exchanged`, `get_last_participant` using persistent storage.
-
-Files you asked to check:
-- `pdr.md`
-- `FreighterWalletDocs.md`
-- `StellarDeploy.md`
-
-Quick start (local):
-
-# CrediSkill — Minimal Skill-Exchange dApp
-
 This repository contains a minimal skill-exchange dApp demonstrating a Next.js (TypeScript) frontend integrated with a Soroban smart contract on Stellar Testnet. It focuses on the basic flow: wallet connect (Freighter), contract invocation (Soroban), and reading persistent contract state.
 
 This README includes:
@@ -180,21 +163,3 @@ If Freighter is not detected, the index page now shows a manual public-key input
 - Soroban RPC parsing: If `readTotals()` returns default values, inspect the RPC response in Network devtools and paste it here; I will adapt the parser.
 
 - npm install errors: If a package's postinstall expects `yarn`, run `npm i -g yarn` and retry `npm install`.
-
----
-
-## Next improvements (recommended)
-
-- Migrate fully to `@stellar/stellar-sdk` and remove the fallback for clearer APIs.
-- Harden `readTotals()` to the exact RPC provider response format.
-- Add transaction history UI and more robust error parsing of Horizon responses.
-- Add automated tests for the contract and a small integration test that mocks RPC responses.
-
----
-
-If you want I can:
-- adapt `readTotals()` to your RPC provider if you paste a sample response,
-- finish migrating to `@stellar/stellar-sdk` with precise ScVal encodings, or
-- add CI scripts for contract build + deploy.
-
-Tell me which direction you want and I'll continue.
